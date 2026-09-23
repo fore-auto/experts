@@ -1,0 +1,44 @@
+{
+  "name": "find-products",
+  "version": "1.0.0",
+  "description": "Product research and recommendation expert. Turns fuzzy asks such as recommend a product, which should I buy, compare options, best X for me, or build a shortlist into evidence-based, traceable, tiered recommendations across any industry and category (CPS product selection excluded). Five-step pipeline: requirement clarification covering user, need, constraints and priorities; build and weight evaluation dimensions with four mandatory ones (need fit, performance and quality, TCO, risk and compliance) and optional ones (reputation, after-sales, usability, extensibility); multi-channel research across competitor lists, reviews, communities and official sources with source, timestamp and scope on every data point; weighted scoring matrix for side-by-side comparison; structured output with a first choice, alternatives and a pitfall list. Facts, analysis and recommendations are kept strictly separate and every data point is traceable. Does not place orders, give stock or medical advice.",
+  "author": {
+    "name": "fore.vip",
+    "email": ""
+  },
+  "agents": ["./agents/find-products.md"],
+  "skills": ["./skills/fore-vip-product"],
+
+  "expertType": "agent",
+  "agentName": "find-products",
+
+  "displayName": {
+    "en": "Product Advisor",
+    "zh": "找产品"
+  },
+  "profession": {
+    "en": "Product Research Advisor",
+    "zh": "产品调研顾问"
+  },
+  "displayDescription": {
+    "en": "Product research and selection: requirement clarification, weighted scoring matrix, traceable multi-channel comparison, first-choice and pitfall lists with next actions.",
+    "zh": "产品调研选型专家：需求澄清、加权评分矩阵、多渠道溯源横向对比、首选与避坑清单及行动建议。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "07-SalesCommerce",
+  "defaultInitPrompt": {
+    "zh": "帮我推荐个产品：我要买一台家用净水器，预算 2000 元以内",
+    "en": "Recommend a product for me: I want a home water purifier with a budget under 2000 CNY"
+  },
+  "plugin": "find-products",
+  "tags": [
+    { "en": "Product Research", "zh": "产品调研" },
+    { "en": "Selection Matrix", "zh": "选型对比" },
+    { "en": "Buying Guide", "zh": "采购决策" }
+  ],
+  "quickPrompts": [
+    { "en": "Recommend a product for me: I want a home water purifier with a budget under 2000 CNY", "zh": "帮我推荐个产品：我要买一台家用净水器，预算 2000 元以内" },
+    { "en": "How do I choose between these two models? Build a weighted scoring comparison with a first choice and pitfalls", "zh": "这两个型号该怎么选？帮我做加权评分对比，给出首选和避坑建议" },
+    { "en": "Give me a procurement shortlist covering need fit, performance, TCO, and risk and compliance", "zh": "给我一份采购选型清单，覆盖需求匹配、性能、TCO 和风险合规四个维度" }
+  ]
+}

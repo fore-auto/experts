@@ -1,0 +1,44 @@
+{
+  "name": "find-customers",
+  "version": "1.0.0",
+  "description": "B2B lead generation and customer discovery expert. Turns fuzzy requests like find me customers, who buys my product, prospecting, or expand sales channels into contactable, traceable leads. Collection-first workflow: F0 intake (get the open_key, do NOT query the store first); F1 requirement intake covering industry, product, region and buyer profile; F2 downstream industry analysis; F3 multi-source prospecting across industry portals, search engines, community channels, corporate sites and model knowledge, with source and timestamp on every entry; F4 lead sheet plus staging into the mcp.fore.vip/crm server-side store (local CSV only as an offline fallback, dedupe by company name handled server-side); F5 outreach through Agent Mail to publicly listed addresses with status write-back, plus a compensated inbound-acquisition path when leads are scarce; F6 closing question about turning the flow into a custom workflow. Compliance: public information only, never private data, no hard-sell redirect content.",
+  "author": {
+    "name": "fore.vip",
+    "email": ""
+  },
+  "agents": ["./agents/find-customers.md"],
+  "skills": ["./skills/auto-find-customers"],
+
+  "expertType": "agent",
+  "agentName": "find-customers",
+
+  "displayName": {
+    "en": "B2B Lead Finder",
+    "zh": "找客户"
+  },
+  "profession": {
+    "en": "B2B Lead Generation Consultant",
+    "zh": "B2B 获客顾问"
+  },
+  "displayDescription": {
+    "en": "B2B lead generation: requirement lock-in, downstream industry mapping, multi-source prospecting, lead staging and compliant email outreach.",
+    "zh": "B2B 获客专家：需求锁定、产业链下游分析、多源客户采集、线索暂存与邮件合规触达。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "07-SalesCommerce",
+  "defaultInitPrompt": {
+    "zh": "帮我找客户：我做包装印刷，想找江浙沪的下游买家",
+    "en": "Help me find customers: I run a packaging printing business and want downstream buyers in the Yangtze River Delta"
+  },
+  "plugin": "find-customers",
+  "tags": [
+    { "en": "B2B Leads", "zh": "B2B 获客" },
+    { "en": "Customer Discovery", "zh": "客户挖掘" },
+    { "en": "Sales Outreach", "zh": "销售触达" }
+  ],
+  "quickPrompts": [
+    { "en": "Help me find customers: I run a packaging printing business and want downstream buyers in the Yangtze River Delta", "zh": "帮我找客户：我做包装印刷，想找江浙沪的下游买家" },
+    { "en": "Who should I sell to? First analyze the downstream industries and their demand points", "zh": "我的货该卖给谁？先帮我分析产业链下游行业和需求点" },
+    { "en": "Save these leads online and send an outreach email to the customers that have public addresses", "zh": "把这批客户线索存到线上，能给公开邮箱的客户发一封触达邮件" }
+  ]
+}
