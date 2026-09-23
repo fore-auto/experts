@@ -33,6 +33,8 @@
 
 ```
 experts/
+├── pack.sh                                # 一键校验 + 打包（产出到 dist/，见「发布前自检」）
+├── dist/                                  # 打包产物（*.zip，已 gitignore，不入库）
 ├── geo/                                   # GEO 内容自动化专家
 │   ├── .codebuddy-plugin/plugin.json       # 专家元数据（name / agentName / categoryId / 入口声明）
 │   ├── agents/geo.md                       # 专家人设与 SOP 编排
@@ -106,15 +108,35 @@ cd ~/git/fore.vip/skills/fore-vip-product && tar cf - . | (cd ~/git/auto/experts
 
 > 跨 `~/.workbuddy` ↔ `~/git` 的复制一律用 `tar` 管道，`cp -R` 会报 `ENOTSUP: operation not supported on socket`。
 
-## 发布前自检
+## 发布前自检与打包
 
 ```bash
-S=/Applications/WorkBuddy.app/Contents/Resources/app.asar.unpacked/resources/plugins/workbuddy-builtin/skills/expert-manager/scripts
-E=~/git/auto/experts
-for n in geo site find-customers find-products; do python3 $S/validate_expert.py $E/$n; done
-# 每个专家仅允许「不在专家目录下」这 1 个预期 error
-python3 $S/package_expert.py $E/site   # 产出上传件
+cd ~/git/auto/experts
+bash pack.sh              # 校验 + 打包全部四位专家 → dist/*.zip
+bash pack.sh geo site     # 也可只处理指定专家
 ```
+
+脚本做三件事：① 修正早于 1980 年的时间戳（zip 格式硬限制，否则打包中途报 `ZIP does not support timestamps before 1980`）；② 在临时「仿真市场目录」中按官方路径复刻后调用官方 `validate_expert.py`；③ 调用官方 `package_expert.py` 产出 `dist/<name>.zip`。
+
+**为什么必须走仿真目录**：官方校验器强制要求专家目录位于 `<WORKBUDDY_CONFIG_DIR>/plugins/marketplaces/my-experts/plugins/` 之下，否则报 `专家不在专家目录下` 使 `is_valid=False`，`package_expert.py` 会直接中止打包。发布源天然不在该路径，脚本用一份临时拷贝绕过，**不触碰真实 `my-experts`**。
+
+产出 zip 的根目录为 `<专家名>/`（与官方模板一致），可直接上传开放平台。
+
+## 规范符合性（对照 open.workbuddy.cn/docs/expert）
+
+| 检查项 | 要求 | 现状 |
+|---|---|---|
+| 目录结构 | `.codebuddy-plugin/plugin.json` + `agents/<name>.md` + `avatars/expert.png` + `README.md` | ✅ 四位一致 |
+| `plugin.json` 必填字段 | name / version / description / author / agents / agentName / expertType + 6 个展示字段 | ✅ 无缺失 |
+| `name` 命名 | 小写字母 + 连字符 | ✅ |
+| `displayDescription.zh` | 40–50 字 | ✅ 41 / 44 / 48 / 50 |
+| `tags` / `quickPrompts` | 各固定 3 个，`{en, zh}` 双语 | ✅ |
+| `defaultInitPrompt` | `{en, zh}`，且与 `quickPrompts[0]` 逐语言一致 | ✅ |
+| 头像 | PNG 512×512 ≤ 500KB | ✅ 295–393KB |
+| Agent frontmatter | name / description / displayName / profession | ✅ 四件齐全 |
+| 官方 `validate_expert.py` | 零 error | ✅（见下述例外） |
+
+> 例外说明：在**发布源路径**下直接跑官方校验器必然报 1 个 error（不在专家目录下），属预期；`pack.sh` 的仿真目录校验为零 error。
 
 ## 版本管理
 
