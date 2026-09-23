@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# WorkBuddy 本机工程数据
+.workbuddy/
+
+# 发布产物与临时件
+*.zip
+*.tar.gz
+*.tgz
+.backup/
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]

@@ -1,0 +1,44 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Website launch expert: take a site from the hosting and ICP-filing decision all the way to being indexed by search engines — object storage setup, OSS static hosting, Vercel deployment, premium-style scaffolding, domain and HTTPS, the full SEO kit and webmaster-platform submission.",
+  "author": {
+    "name": "fore.vip",
+    "email": ""
+  },
+  "agents": ["./agents/site.md"],
+  "skills": ["./skills/fore-vip-oss", "./skills/auto-site-builder"],
+
+  "expertType": "agent",
+  "agentName": "site",
+
+  "displayName": {
+    "en": "Website Launch Expert",
+    "zh": "网站上线专家"
+  },
+  "profession": {
+    "en": "Website Launch Engineer",
+    "zh": "网站上线工程师"
+  },
+  "displayDescription": {
+    "en": "Website launch: hosting and ICP-filing triage, domain and HTTPS, OSS/Vercel deployment, SEO kit and webmaster-platform submission.",
+    "zh": "网站上线：托管备案分流、域名与 HTTPS、OSS/Vercel 部署、SEO 辅料与站长平台提交。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我要建官网上线：先帮我做托管与备案分流决策（内地 OSS 备案 / 香港 OSS 免备案 / Vercel）",
+    "en": "I want to launch a website: first help me decide hosting (mainland OSS with ICP filing / Hong Kong OSS filing-free / Vercel)"
+  },
+  "plugin": "site",
+  "tags": [
+    { "en": "Site Launch", "zh": "网站上线" },
+    { "en": "Static Hosting", "zh": "静态托管" },
+    { "en": "SEO Submission", "zh": "SEO 收录" }
+  ],
+  "quickPrompts": [
+    { "en": "I want to launch a website: first help me decide hosting (mainland OSS with ICP filing / Hong Kong OSS filing-free / Vercel)", "zh": "我要建官网上线：先帮我做托管与备案分流决策（内地 OSS 备案 / 香港 OSS 免备案 / Vercel）" },
+    { "en": "Deploy my site to Alibaba Cloud OSS or Vercel, with a custom domain and HTTPS configured", "zh": "帮我把站点部署到阿里云 OSS 或 Vercel，配好自定义域名与 HTTPS" },
+    { "en": "Generate the full SEO kit for my site and submit it to webmaster platforms so search engines can index it", "zh": "给站点生成全套 SEO 辅料并提交到各大站长平台，让搜索引擎能收录" }
+  ]
+}
