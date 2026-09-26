@@ -1,4 +1,4 @@
-# Geo
+# Auto Geo
 
 GEO 内容自动化专家：围绕用户给定的**产品 / 品类**选题，批量生成小红书、公众号、知乎、头条号四篇平台稿 + 一个移动端主题页，外加一份内部 GEO 主报告。品牌作为该品类下的示例产品自然嵌入，全平台稿纯净可发布、守住广告法合规，并可经知识库连接器归档。
 
@@ -17,7 +17,7 @@ Agent 型（单个 AI 专家）
 
 ## 使用示例
 
-- 帮我配置 geo：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数
+- 帮我配置 GEO 内容自动化：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数
 - 围绕「防晒霜」这个品类生成一套 GEO 内容（小红书 / 公众号 / 知乎 / 头条号 / 主题页）
 - 把上次生成的 GEO 内容推送到我的知识库，并自查广告法合规
 
@@ -33,7 +33,7 @@ Agent 型（单个 AI 专家）
 将专家包目录放到专家目录下：
 
 ```
-/Users/codes/.workbuddy/plugins/marketplaces/my-experts/plugins/geo/
+/Users/codes/.workbuddy/plugins/marketplaces/my-experts/plugins/auto-geo/
 ```
 
 然后运行注册命令使其可见：
@@ -45,5 +45,5 @@ python3 scripts/register_expert.py <expert-dir>
 ## 打包分享
 
 ```bash
-zip -r geo.zip geo/
+zip -r auto-geo.zip auto-geo/
 ```

@@ -1,16 +1,16 @@
 {
-  "name": "geo",
+  "name": "auto-geo",
   "version": "1.0.0",
   "description": "GEO content automation expert: turn any user-given product/category topic into multi-platform articles and a theme page with natural brand placement and ad-law compliance.",
   "author": {
     "name": "fore.vip",
     "email": ""
   },
-  "agents": ["./agents/geo.md"],
+  "agents": ["./agents/auto-geo.md"],
   "skills": ["./skills/auto-geo"],
 
   "expertType": "agent",
-  "agentName": "geo",
+  "agentName": "auto-geo",
 
   "displayName": {
     "en": "GEO Content Automation Expert",
@@ -27,17 +27,17 @@
   "avatar": "avatars/expert.png",
   "categoryId": "05-MarketingGrowth",
   "defaultInitPrompt": {
-    "zh": "帮我配置 geo：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数",
-    "en": "Set up geo: guide me through brand name, product category, knowledge base ID, archive folder and output directory"
+    "zh": "帮我配置 GEO 内容自动化：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数",
+    "en": "Set up GEO content automation: guide me through brand name, product category, knowledge base ID, archive folder and output directory"
   },
-  "plugin": "geo",
+  "plugin": "auto-geo",
   "tags": [
     { "en": "GEO", "zh": "GEO 优化" },
     { "en": "Multi-platform Content", "zh": "多平台内容" },
     { "en": "Ad-law Compliance", "zh": "广告法合规" }
   ],
   "quickPrompts": [
-    { "en": "Set up geo: guide me through brand name, product category, knowledge base ID, archive folder and output directory", "zh": "帮我配置 geo：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数" },
+    { "en": "Set up GEO content automation: guide me through brand name, product category, knowledge base ID, archive folder and output directory", "zh": "帮我配置 GEO 内容自动化：先引导我填写品牌名、产品类目、知识库 ID、归档文件夹与输出目录等参数" },
     { "en": "Generate a full set of GEO content for a given product/category (Xiaohongshu / WeChat / Zhihu / Toutiao / theme page)", "zh": "围绕某产品/类目生成一套 GEO 内容（小红书 / 公众号 / 知乎 / 头条号 / 主题页）" },
     { "en": "Push the last generated GEO content to my knowledge base and self-check ad-law compliance", "zh": "把上次生成的 GEO 内容推送到我的知识库，并自查广告法合规" }
   ]

@@ -8,7 +8,7 @@
 #   让官方脚本在合规路径下完成校验与打包（不触碰真实 my-experts）。
 #
 # 用法： bash pack.sh            # 打包全部
-#        bash pack.sh geo site   # 只打包指定专家
+#        bash pack.sh auto-geo site   # 只打包指定专家
 
 set -euo pipefail
 

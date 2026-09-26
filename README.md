@@ -12,7 +12,7 @@
 
 | 目录 | 专家 `name` | 定位 | 分类 | 版本 |
 |---|---|---|---|---|
-| [`auto-geo/`](./auto-geo) | `geo` | **GEO 内容自动化专家**：产品 / 类目 → 多平台文章 + 主题页，品牌自然嵌入、广告法合规 | `05-MarketingGrowth` | 1.0.0 |
+| [`auto-geo/`](./auto-geo) | `auto-geo` | **GEO 内容自动化专家**：产品 / 类目 → 多平台文章 + 主题页，品牌自然嵌入、广告法合规 | `05-MarketingGrowth` | 1.0.0 |
 | [`site/`](./site) | `site` | **网站上线专家**：托管与备案分流 → OSS / Vercel 部署 → 域名与 HTTPS → SEO 辅料与站长平台提交 | `02-Engineering` | 1.0.0 |
 | [`find-customers/`](./find-customers) | `find-customers` | **B2B 获客专家**：需求锁定 → 产业链下游分析 → 多源客户采集 → 线索暂存 → 邮件直推 / 发布获客 | `07-SalesCommerce` | 1.0.0 |
 | [`find-products/`](./find-products) | `find-products` | **产品调研顾问**：需求澄清 → 维度赋权 → 多渠道调研 → 加权评分对比 → 首选与避坑清单 | `07-SalesCommerce` | 1.0.0 |
@@ -37,7 +37,7 @@ experts/
 ├── dist/                                  # 打包产物（*.zip，已 gitignore，不入库）
 ├── auto-geo/                              # GEO 内容自动化专家
 │   ├── .codebuddy-plugin/plugin.json       # 专家元数据（name / agentName / categoryId / 入口声明）
-│   ├── agents/geo.md                       # 专家人设与 SOP 编排
+│   ├── agents/auto-geo.md                  # 专家人设与 SOP 编排
 │   ├── avatars/expert.png                  # 专家头像（512×512）
 │   └── skills/auto-geo/                    # 内置技能：GEO 五步流水线 + 问句库 / 平台库 / GEO 状态诊断图模板
 ├── site/                                  # 网站上线专家
@@ -64,7 +64,7 @@ experts/
 专家包经 WorkBuddy 开放平台发布，终端用户从 WorkBuddy 专家市场安装：
 
 1. 打开 WorkBuddy，左侧栏选择「专家」
-2. 搜索专家名（`geo` / `site` / `find-customers` / `find-products`）
+2. 搜索专家名（`auto-geo` / `site` / `find-customers` / `find-products`）
 3. 安装后直接在新会话中对话即可
 
 ## 发布链路（单向，勿逆）
@@ -92,7 +92,7 @@ experts/<name>/  ──上传──▶  开放平台（workbuddy.cn）  ──�
 技能侧迭代后同步灌入专家包，再走上面的发布链路（方向固定为**技能发布源 → 专家发布源**）：
 
 ```bash
-# geo
+# auto-geo
 cd ~/git/auto/skills/auto-geo && tar cf - . | (cd ~/git/auto/experts/auto-geo/skills/auto-geo && tar xf -)
 
 # site
@@ -113,7 +113,7 @@ cd ~/git/fore.vip/skills/fore-vip-product && tar cf - . | (cd ~/git/auto/experts
 ```bash
 cd ~/git/auto/experts
 bash pack.sh              # 校验 + 打包全部四位专家 → dist/*.zip
-bash pack.sh geo site     # 也可只处理指定专家
+bash pack.sh auto-geo site     # 也可只处理指定专家
 ```
 
 脚本做三件事：① 修正早于 1980 年的时间戳（zip 格式硬限制，否则打包中途报 `ZIP does not support timestamps before 1980`）；② 在临时「仿真市场目录」中按官方路径复刻后调用官方 `validate_expert.py`；③ 调用官方 `package_expert.py` 产出 `dist/<name>.zip`。
