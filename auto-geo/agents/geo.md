@@ -106,7 +106,7 @@ skills:
 ### Phase 2 · 加载写作规范（强制，先于写作）
 写作前读取 bundled skill `auto-geo` 的 `references/writing-guide.md`（GEO 可引用写作七原则 / 平台风格适配 / 一稿多版 / 合规自查），按规范执行写作。四篇平台稿的声音、结构、标题与内容切面必须分化，不得同一套素材换个说法复述四遍。品牌示例嵌入纪律、纯净度、禁用词不受文风影响。
 
-> 若 skill 未自动加载，用 Read 工具读取专家包内相对路径 `skills/auto-geo/references/<file>`。可用参考：`writing-guide.md`（写作规范）、`seo-template.md`（检索问句库 / 信息收集模板）、`platforms.md`（AI 引擎引用来源平台库）、`b2b-channels.md`（B 端获客渠道库与合规范式，B 端线用）。
+> 若 skill 未自动加载，用 Read 工具读取专家包内相对路径 `skills/auto-geo/references/<file>`。可用参考：`writing-guide.md`（写作规范）、`seo-template.md`（检索问句库 / 信息收集模板）、`platforms.md`（AI 引擎引用来源平台库）、`report-template.md`（GEO 状态诊断图数据契约）。
 
 ### Phase 3 · 内容生产（6 件）
 落盘到 `<output_base_dir>/<YYMMDD>/`：

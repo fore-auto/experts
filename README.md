@@ -12,7 +12,7 @@
 
 | 目录 | 专家 `name` | 定位 | 分类 | 版本 |
 |---|---|---|---|---|
-| [`geo/`](./geo) | `geo` | **GEO 内容自动化专家**：产品 / 类目 → 多平台文章 + 主题页，品牌自然嵌入、广告法合规 | `05-MarketingGrowth` | 1.0.0 |
+| [`auto-geo/`](./auto-geo) | `geo` | **GEO 内容自动化专家**：产品 / 类目 → 多平台文章 + 主题页，品牌自然嵌入、广告法合规 | `05-MarketingGrowth` | 1.0.0 |
 | [`site/`](./site) | `site` | **网站上线专家**：托管与备案分流 → OSS / Vercel 部署 → 域名与 HTTPS → SEO 辅料与站长平台提交 | `02-Engineering` | 1.0.0 |
 | [`find-customers/`](./find-customers) | `find-customers` | **B2B 获客专家**：需求锁定 → 产业链下游分析 → 多源客户采集 → 线索暂存 → 邮件直推 / 发布获客 | `07-SalesCommerce` | 1.0.0 |
 | [`find-products/`](./find-products) | `find-products` | **产品调研顾问**：需求澄清 → 维度赋权 → 多渠道调研 → 加权评分对比 → 首选与避坑清单 | `07-SalesCommerce` | 1.0.0 |
@@ -21,10 +21,10 @@
 
 | 专家 | 内置技能 | 技能发布源 | 版本 |
 |---|---|---|---|
-| `geo/` | `skills/auto-geo/` | `~/git/auto/skills/auto-geo/`（`fore-vip-geo-optimizer`） | — |
+| `auto-geo/` | `skills/auto-geo/` | `~/git/auto/skills/auto-geo/`（`fore-vip-geo-optimizer`） | — |
 | `site/` | `skills/fore-vip-oss/` | `~/git/fore.vip/skills/fore-vip-oss/` | 1.0.1 |
 | `site/` | `skills/auto-site-builder/` | `~/git/auto/skills/auto-site-builder/` | 1.0.0 |
-| `find-customers/` | `skills/auto-find-customers/` | `~/git/auto/skills/auto-find-customers/` | 2.2.1 |
+| `find-customers/` | `skills/auto-find-customers/` | `~/git/auto/skills/auto-find-customers/` | 1.0.2 |
 | `find-products/` | `skills/fore-vip-product/` | `~/git/fore.vip/skills/fore-vip-product/` | 1.0.0 |
 
 > 灌入技能源时**剔除 `_meta.json`** 等发布产物（属打包元数据，非技能本体），与既有专家保持一致。
@@ -35,11 +35,11 @@
 experts/
 ├── pack.sh                                # 一键校验 + 打包（产出到 dist/，见「发布前自检」）
 ├── dist/                                  # 打包产物（*.zip，已 gitignore，不入库）
-├── geo/                                   # GEO 内容自动化专家
+├── auto-geo/                              # GEO 内容自动化专家
 │   ├── .codebuddy-plugin/plugin.json       # 专家元数据（name / agentName / categoryId / 入口声明）
 │   ├── agents/geo.md                       # 专家人设与 SOP 编排
 │   ├── avatars/expert.png                  # 专家头像（512×512）
-│   └── skills/auto-geo/                    # 内置技能：GEO 写作流水线 + 问句库 / 平台库 / B 端渠道库
+│   └── skills/auto-geo/                    # 内置技能：GEO 五步流水线 + 问句库 / 平台库 / GEO 状态诊断图模板
 ├── site/                                  # 网站上线专家
 │   ├── .codebuddy-plugin/plugin.json
 │   ├── agents/site.md
@@ -93,7 +93,7 @@ experts/<name>/  ──上传──▶  开放平台（workbuddy.cn）  ──�
 
 ```bash
 # geo
-cd ~/git/auto/skills/auto-geo && tar cf - . | (cd ~/git/auto/experts/geo/skills/auto-geo && tar xf -)
+cd ~/git/auto/skills/auto-geo && tar cf - . | (cd ~/git/auto/experts/auto-geo/skills/auto-geo && tar xf -)
 
 # site
 cd ~/git/fore.vip/skills/fore-vip-oss  && tar cf - . | (cd ~/git/auto/experts/site/skills/fore-vip-oss && tar xf -)

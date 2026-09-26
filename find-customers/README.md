@@ -21,7 +21,7 @@ Agent 型（单个 AI 专家）
 
 | 技能目录 | 技能发布源 | 版本 | 职责 |
 |---|---|---|---|
-| `skills/auto-find-customers/` | `~/git/auto/skills/auto-find-customers` | 2.2.1 | F0–F6 全流程：采集口径、CRM 接口与字段映射、CSV 兜底规范、Agent Mail 触达流程、发布获客渠道库 |
+| `skills/auto-find-customers/` | `~/git/auto/skills/auto-find-customers` | 1.0.2 | F0–F6 全流程：采集口径、CRM 接口与字段映射、CSV 兜底规范、Agent Mail 触达流程、发布获客渠道库 |
 
 ## 使用示例
 
